@@ -1,4 +1,7 @@
-# mm
+# webapp-newmusic
+
+这是重构的项目，使用的是网易云的音乐api
+
 
 > A Vue.js project
 
