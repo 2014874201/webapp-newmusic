@@ -18,6 +18,7 @@
         <loading></loading>
       </div>
     </scroll>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -48,6 +49,12 @@ export default {
       do {
         MUSIC_TOP.push(i++)
       } while (i <= 23)
+    },
+    selectItem (item) {
+      this.$router.push({
+        path: `/rank/${item.id}`
+      })
+      // this.setTopList(item)
     },
     _getTopList () {
       for (let i = 0; i < MUSIC_TOP.length; i++) { // 重复请求
@@ -97,9 +104,9 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding:10px 20px;
+      padding:20px 20px;
+      margin-left: 10px;
       font-size: $font-size-small-ss;
-      background: pink;
       .song {
         flex: 1;
         @include no-wrap();
